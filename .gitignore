@@ -1,5 +1,11 @@
-# Google App Engine generated folder
+# MacOS
+.DS_Store
+
+# Google App Engine
 appengine-generated/
+
+# JetBrains IDE
+.idea/
 
 # Python compiled files
 *.pyc

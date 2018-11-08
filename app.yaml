@@ -1,0 +1,34 @@
+application: rabor-net
+version: delta
+module: default
+
+api_version: '1'
+runtime: python27
+threadsafe: true
+
+builtins:
+- remote_api: 'on'
+- deferred: 'on'
+
+libraries:
+- name: ssl
+  version: '2.7.11'
+
+inbound_services:
+- warmup
+
+handlers:
+- url: /favicon.ico
+  static_files: root/favicon.ico
+  upload: root/favicon.ico
+
+- url: /robots.txt
+  static_files: root/robots.txt
+  upload: root/robots.txt
+
+- url: /humans.txt
+  static_files: root/humans.txt
+  upload: root/robots.txt
+
+- url: .*
+  script: main.app

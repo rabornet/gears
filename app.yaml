@@ -18,6 +18,15 @@ inbound_services:
 - warmup
 
 handlers:
+# STATIC ANGULAR BUILD FILES
+- url: /dist/(developer)/(.*).js
+  static_files: ng/sites/developer/dist/\1/\2.js
+  upload: ng/sites/developer/dist/(.*?)/(.*).js
+
+- url: /dist/(public)/(.*).js
+  static_files: ng/sites/public/dist/\1/\2.js
+  upload: ng/sites/public/dist/(.*?)/(.*).js
+
 - url: /favicon.ico
   static_files: root/favicon.ico
   upload: root/favicon.ico

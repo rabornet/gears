@@ -1,12 +1,14 @@
-import logging
-logging.info('###~###~###~###~###~###~###~###~###~###~###~###~###~###~###~###~###~')
-logging.info('###~###~###~###~###~###~###~###~###~###~###~###~###~###~###~###~###~')
-logging.info('###~###~###~###~###~###~###~###~###~###~###~###~###~###~###~###~###~')
+from ng import rpc
 
 from client import ui_handler
 import webapp2
 
 app = webapp2.WSGIApplication([
+  # Angular applications
+  ('/gears' , rpc.GearsPage),
+  ('/public' , rpc.PublicPage),
+
+
   ('/'          , ui_handler.DefaultPage),
   ('/_ah/start' , ui_handler.StartPage),
   ('/_ah/warmup', ui_handler.WarmUpPage),
